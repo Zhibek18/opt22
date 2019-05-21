@@ -16,8 +16,10 @@ public class BookArray{
 	}
 	public String toString(){
 		String s = "BookArray:\n";
-		for (Book book : books){
-			s += book;
+		if (books != null){
+			for (Book book : books){
+				s += book;
+			}
 		}
 		return s;
 	}
@@ -32,4 +34,25 @@ public class BookArray{
 		}
 		return authorBooks;
 	}
+
+	public BookArray publishedBy(String publisher){
+		BookArray publisherBooks = new BookArray();
+		for (Book book : books){
+			if (book.getPublishingHouse().equals(publisher)){
+				publisherBooks.addBook(book);
+			}		
+		}
+		return publisherBooks;
+	}
+
+	public BookArray publishedSince(int year){
+		BookArray yearBooks = new BookArray();
+		for (Book book : books){
+			if (book.getPublishingYear() > year){
+				yearBooks.addBook(book);
+			}
+		}
+		return yearBooks;
+	}
+
 }

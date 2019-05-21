@@ -41,6 +41,12 @@ public class Book{
 	public String[] getAuthors(){
 		return authors;
 	}
+	public String getPublishingHouse(){
+		return publishingHouse;
+	}
+	public int getPublishingYear(){
+		return publishingYear;
+	}
 	public String toString(){
 		String s = "№";
 		s += bookId + " ";

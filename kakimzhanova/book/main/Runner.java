@@ -11,7 +11,9 @@ public class Runner{
 		ourBooks.addBook(myBook);
 		ourBooks.addBook(yourBook);
 		ourBooks.addBook(hisBook);
-		System.out.println(ourBooks.writtenBy("Л.Н.Толстой"));
+		//System.out.println(ourBooks.writtenBy("Л.Н.Толстой"));
+		//System.out.println(ourBooks.publishedBy("АСТ"));
+		System.out.println(ourBooks.publishedSince(2000));
 		//System.out.println(ourBooks);
 	}
 }
