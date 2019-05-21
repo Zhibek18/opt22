@@ -1,6 +1,7 @@
 package opt22.kakimzhanova.book.entity;
 
 public class Book{
+	static int bookCount = 0;
 	int bookId;
 	String name;
 	String[] authors;
@@ -10,11 +11,11 @@ public class Book{
 	double price;
 	String bindingType;
 
-	public Book(int bookId, String name, String[] authors, 
+	public Book(String name, String[] authors, 
 		String publishingHouse, int publishingYear, 
 		int pagesQuantity, double price, String bindingType){
 
-		this.bookId = bookId;
+		this.bookId = ++bookCount;
 		this.name = name;
 		this.authors = authors;
 		this.publishingHouse = publishingHouse;
@@ -23,12 +24,12 @@ public class Book{
 		this.price = price;
 		this.bindingType = bindingType;
 	}
-	public Book(int bookId, String name, String author, 
+	public Book(String name, String author, 
 		String publishingHouse, int publishingYear, 
 		int pagesQuantity, double price, String bindingType){
 
 		String[] authors = {author};
-		this.bookId = bookId;
+		this.bookId = ++bookCount;
 		this.name = name;
 		this.authors = authors;
 		this.publishingHouse = publishingHouse;
@@ -46,10 +47,10 @@ public class Book{
 			s+= author + " ";
 		}
 		s += "\n";
-		s += "Издательство: '" + publishingHouse + "' ";
+		s += "Издательство: '" + publishingHouse + "' ,";
 		s += publishingYear +  "г. ";
 		s += pagesQuantity + "c. ";
-		s += bindingType + " переплет" ;
+		s += bindingType + " переплет\n" ;
 		return s;
 	}
 }
