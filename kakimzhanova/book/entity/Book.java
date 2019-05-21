@@ -38,7 +38,9 @@ public class Book{
 		this.price = price;
 		this.bindingType = bindingType;
 	}
-
+	public String[] getAuthors(){
+		return authors;
+	}
 	public String toString(){
 		String s = "№";
 		s += bookId + " ";

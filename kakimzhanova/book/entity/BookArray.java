@@ -21,4 +21,15 @@ public class BookArray{
 		}
 		return s;
 	}
+	public BookArray writtenBy(String author){
+		BookArray authorBooks = new BookArray();
+		for (Book book : books){
+			for (String bookAuthor : book.getAuthors()){
+				if (bookAuthor.equals(author)){
+					authorBooks.addBook(book);
+				}
+			}
+		}
+		return authorBooks;
+	}
 }
