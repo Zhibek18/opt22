@@ -23,36 +23,8 @@ public class BookArray{
 		}
 		return s;
 	}
-	public BookArray writtenBy(String author){
-		BookArray authorBooks = new BookArray();
-		for (Book book : books){
-			for (String bookAuthor : book.getAuthors()){
-				if (bookAuthor.equals(author)){
-					authorBooks.addBook(book);
-				}
-			}
-		}
-		return authorBooks;
-	}
-
-	public BookArray publishedBy(String publisher){
-		BookArray publisherBooks = new BookArray();
-		for (Book book : books){
-			if (book.getPublishingHouse().equals(publisher)){
-				publisherBooks.addBook(book);
-			}		
-		}
-		return publisherBooks;
-	}
-
-	public BookArray publishedSince(int year){
-		BookArray yearBooks = new BookArray();
-		for (Book book : books){
-			if (book.getPublishingYear() > year){
-				yearBooks.addBook(book);
-			}
-		}
-		return yearBooks;
+	public Book[] getBooks(){
+		return books;
 	}
 
 }
