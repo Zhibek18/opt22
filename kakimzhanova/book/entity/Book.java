@@ -1,5 +1,5 @@
 package opt22.kakimzhanova.book.entity;
-
+import java.math.BigDecimal;
 public class Book{
 	static int bookCount = 0;
 	int bookId;
@@ -8,7 +8,7 @@ public class Book{
 	String publishingHouse;
 	int publishingYear;
 	int pagesQuantity;
-	double price;
+	BigDecimal price;
 	String bindingType;
 
 	public Book(String name, String[] authors, 
@@ -21,7 +21,7 @@ public class Book{
 		this.publishingHouse = publishingHouse;
 		this.publishingYear = publishingYear;
 		this.pagesQuantity = pagesQuantity;
-		this.price = price;
+		this.price = new BigDecimal(price);
 		this.bindingType = bindingType;
 	}
 	public Book(String name, String author, 
@@ -35,7 +35,7 @@ public class Book{
 		this.publishingHouse = publishingHouse;
 		this.publishingYear = publishingYear;
 		this.pagesQuantity = pagesQuantity;
-		this.price = price;
+		this.price = new BigDecimal(price);
 		this.bindingType = bindingType;
 	}
 	public String[] getAuthors(){
@@ -48,17 +48,26 @@ public class Book{
 		return publishingYear;
 	}
 	public String toString(){
-		String s = "№";
-		s += bookId + " ";
-		s += name + " ";
+		StringBuffer s = new StringBuffer("№");
+		s.append(bookId);
+		s.append(" ");
+		s.append(name);
+		s.append(" ");
 		for (String author : authors){
-			s+= author + " ";
+			s.append(author + " ");
 		}
-		s += "\n";
-		s += "Издательство: '" + publishingHouse + "' ,";
-		s += publishingYear +  "г. ";
-		s += pagesQuantity + "c. ";
-		s += bindingType + " переплет\n" ;
-		return s;
+		s.append("\n");
+		s.append("Издательство: '");
+		s.append(publishingHouse);
+		s.append("' ,");
+		s.append(publishingYear);
+		s.append("г. ");
+		s.append(pagesQuantity);
+		s.append("c. ");
+		s.append(price);
+		s.append("тг. ");
+		s.append(bindingType);
+		s.append(" переплет\n");
+		return s.toString();
 	}
 }

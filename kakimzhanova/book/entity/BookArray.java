@@ -15,13 +15,13 @@ public class BookArray{
 		}
 	}
 	public String toString(){
-		String s = "BookArray:\n";
+		StringBuffer s = new StringBuffer("");
 		if (books != null){
 			for (Book book : books){
-				s += book;
+				s.append(book);
 			}
 		}
-		return s;
+		return s.toString();
 	}
 	public Book[] getBooks(){
 		return books;
